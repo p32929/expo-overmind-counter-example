@@ -16,12 +16,12 @@ const Counter: React.FC<Props> = (props) => {
         <Text>{counter}</Text>
 
         <View style={styles.button}>
-            <Button mode="contained" color='#000' onPress={() => {
+            <Button mode="contained" onPress={() => {
                 console.log("Pressed+");
                 increase(1)
             }} >+</Button>
 
-            <Button mode="contained" color='#000' onPress={() => {
+            <Button mode="contained" onPress={() => {
                 console.log("Pressed-");
                 increase(-1)
             }} >-</Button>
