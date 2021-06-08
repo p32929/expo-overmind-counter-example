@@ -15,13 +15,13 @@ const Counter: React.FC<Props> = (props) => {
         <Text>HELLO WORLD</Text>
         <Text>{counter}</Text>
 
-        <View style={styles.button}>
-            <Button mode="contained" onPress={() => {
+        <View style={styles.buttonContainer}>
+            <Button style={styles.button} mode="contained" onPress={() => {
                 console.log("Pressed+");
                 increase(1)
             }} >+</Button>
 
-            <Button mode="contained" onPress={() => {
+            <Button style={styles.button} mode="contained" onPress={() => {
                 console.log("Pressed-");
                 increase(-1)
             }} >-</Button>
@@ -40,7 +40,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    button: {
+    buttonContainer: {
         width: 200,
+    },
+    button: {
+        marginTop: 16
     }
 });
