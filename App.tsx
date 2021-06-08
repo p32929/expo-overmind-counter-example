@@ -1,19 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from "overmind-react";
+import { createOvermind } from 'overmind'
+import { config } from './src/Others/Overmind/OvermindHelper'
+import Counter from './src/Components/Counter';
+const overmind = createOvermind(config)
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <Provider value={overmind}>
+      <Counter />
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
