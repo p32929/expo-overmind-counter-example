@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Button, Paragraph, Title } from 'react-native-paper';
 import { useActions, useAppState } from '../Others/Overmind/OvermindHelper';
 
 interface Props {
@@ -12,8 +12,8 @@ const Counter: React.FC<Props> = (props) => {
     const { counter } = useAppState()
 
     return <View style={styles.container}>
-        <Text>HELLO WORLD</Text>
-        <Text>{counter}</Text>
+        <Title>HELLO WORLD</Title>
+        <Title>{counter}</Title>
 
         <View style={styles.buttonContainer}>
             <Button style={styles.button} mode="contained" onPress={() => {
