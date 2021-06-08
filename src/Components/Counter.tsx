@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-paper';
 import { useActions, useAppState } from '../Others/Overmind/OvermindHelper';
 
 interface Props {
@@ -15,15 +16,15 @@ const Counter: React.FC<Props> = (props) => {
         <Text>{counter}</Text>
 
         <View style={styles.button}>
-            <Button title="+" onPress={() => {
+            <Button mode="contained" color='#000' onPress={() => {
                 console.log("Pressed+");
                 increase(1)
-            }} />
+            }} >+</Button>
 
-            <Button title="-" onPress={() => {
+            <Button mode="contained" color='#000' onPress={() => {
                 console.log("Pressed-");
                 increase(-1)
-            }} />
+            }} >-</Button>
         </View>
 
     </View>
