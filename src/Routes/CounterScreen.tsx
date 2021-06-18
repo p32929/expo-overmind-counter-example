@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native';
-import { Button, Paragraph, Title } from 'react-native-paper';
+import { Button, Title } from 'react-native-paper';
 import { useActions, useAppState } from '../Others/Overmind/OvermindHelper';
 
 interface Props {
