@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-native';
+import { Button, Title } from 'react-native-paper';
 import { StyleSheet, Text, View } from 'react-native';
 import { useActions, useAppState } from '../Others/Overmind/OvermindHelper';
 
@@ -13,12 +13,14 @@ const HomeScreen: React.FC<Props> = (props) => {
     const { navigation } = props
 
     return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Text>Counter: {counter}</Text>
-        <Button
-            title="Go to Details"
-            onPress={() => navigation.navigate('Counter')}
-        />
+        <Title>Home Screen</Title>
+        <Title>Counter: {counter}</Title>
+
+        <Button onPress={() => {
+            navigation.navigate('Counter')
+        }}>
+            Goto Details
+        </Button>
     </View>
 
 }

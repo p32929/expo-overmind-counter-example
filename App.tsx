@@ -8,20 +8,32 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import CounterScreen from './src/Routes/CounterScreen';
 import HomeScreen from './src/Routes/HomeScreen';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 const overmind = createOvermind(config)
-
 const Stack = createStackNavigator();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    accent: 'yellow',
+  },
+};
+
 
 export default function App() {
   return (
     <NavigationContainer>
       <Provider value={overmind}>
-        <StatusBar />
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
-          <Stack.Screen name="Counter" component={CounterScreen} />
-        </Stack.Navigator>
+        <PaperProvider theme={theme}>
+          <StatusBar />
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+            <Stack.Screen name="Counter" component={CounterScreen} />
+          </Stack.Navigator>
+        </PaperProvider>
       </Provider>
     </NavigationContainer>
   );
