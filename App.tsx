@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import CounterScreen from './src/Routes/CounterScreen';
 import HomeScreen from './src/Routes/HomeScreen';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import MyHeader from './src/Components/MyHeader';
 
 const overmind = createOvermind(config)
 const Stack = createStackNavigator();
@@ -22,14 +23,14 @@ const theme = {
   },
 };
 
-
 export default function App() {
   return (
     <NavigationContainer>
       <Provider value={overmind}>
         <PaperProvider theme={theme}>
-          <StatusBar />
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator initialRouteName="Home" screenOptions={{
+            header: (props) => <MyHeader {...props} />,
+          }}>
             <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
             <Stack.Screen name="Counter" component={CounterScreen} />
           </Stack.Navigator>
